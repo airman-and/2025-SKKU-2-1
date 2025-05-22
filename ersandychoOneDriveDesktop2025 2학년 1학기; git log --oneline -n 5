@@ -1,0 +1,100 @@
+ .gitignore                                         |   82 [32m+[m
+ .../baseline/checkpoint-1407/model.safetensors"    |  Bin [31m0[m -> [32m126440[m bytes
+ .../ckpt/baseline/checkpoint-1407/optimizer.pt"    |  Bin [31m0[m -> [32m256530[m bytes
+ .../ckpt/baseline/checkpoint-1407/rng_state.pth"   |  Bin [31m0[m -> [32m14244[m bytes
+ .../ckpt/baseline/checkpoint-1407/scheduler.pt"    |  Bin [31m0[m -> [32m1064[m bytes
+ .../baseline/checkpoint-1407/trainer_state.json"   | 1050 [32m++++++[m
+ .../baseline/checkpoint-1407/training_args.bin"    |  Bin [31m0[m -> [32m5304[m bytes
+ .../baseline/checkpoint-1876/model.safetensors"    |  Bin [31m0[m -> [32m126440[m bytes
+ .../ckpt/baseline/checkpoint-1876/optimizer.pt"    |  Bin [31m0[m -> [32m256530[m bytes
+ .../ckpt/baseline/checkpoint-1876/rng_state.pth"   |  Bin [31m0[m -> [32m14244[m bytes
+ .../ckpt/baseline/checkpoint-1876/scheduler.pt"    |  Bin [31m0[m -> [32m1064[m bytes
+ .../baseline/checkpoint-1876/trainer_state.json"   | 1391 [32m++++++++[m
+ .../baseline/checkpoint-1876/training_args.bin"    |  Bin [31m0[m -> [32m5304[m bytes
+ .../baseline/checkpoint-2345/model.safetensors"    |  Bin [31m0[m -> [32m126440[m bytes
+ .../ckpt/baseline/checkpoint-2345/optimizer.pt"    |  Bin [31m0[m -> [32m256530[m bytes
+ .../ckpt/baseline/checkpoint-2345/rng_state.pth"   |  Bin [31m0[m -> [32m14244[m bytes
+ .../ckpt/baseline/checkpoint-2345/scheduler.pt"    |  Bin [31m0[m -> [32m1064[m bytes
+ .../baseline/checkpoint-2345/trainer_state.json"   | 1732 [32m++++++++++[m
+ .../baseline/checkpoint-2345/training_args.bin"    |  Bin [31m0[m -> [32m5304[m bytes
+ .../baseline/checkpoint-2814/model.safetensors"    |  Bin [31m0[m -> [32m126440[m bytes
+ .../ckpt/baseline/checkpoint-2814/optimizer.pt"    |  Bin [31m0[m -> [32m256530[m bytes
+ .../ckpt/baseline/checkpoint-2814/rng_state.pth"   |  Bin [31m0[m -> [32m14244[m bytes
+ .../ckpt/baseline/checkpoint-2814/scheduler.pt"    |  Bin [31m0[m -> [32m1064[m bytes
+ .../baseline/checkpoint-2814/trainer_state.json"   | 2073 [32m++++++++++++[m
+ .../baseline/checkpoint-2814/training_args.bin"    |  Bin [31m0[m -> [32m5304[m bytes
+ .../baseline/checkpoint-3283/model.safetensors"    |  Bin [31m0[m -> [32m126440[m bytes
+ .../ckpt/baseline/checkpoint-3283/optimizer.pt"    |  Bin [31m0[m -> [32m256530[m bytes
+ .../ckpt/baseline/checkpoint-3283/rng_state.pth"   |  Bin [31m0[m -> [32m14244[m bytes
+ .../ckpt/baseline/checkpoint-3283/scheduler.pt"    |  Bin [31m0[m -> [32m1064[m bytes
+ .../baseline/checkpoint-3283/trainer_state.json"   | 2414 [32m++++++++++++++[m
+ .../baseline/checkpoint-3283/training_args.bin"    |  Bin [31m0[m -> [32m5304[m bytes
+ .../baseline/checkpoint-3752/model.safetensors"    |  Bin [31m0[m -> [32m126440[m bytes
+ .../ckpt/baseline/checkpoint-3752/optimizer.pt"    |  Bin [31m0[m -> [32m256530[m bytes
+ .../ckpt/baseline/checkpoint-3752/rng_state.pth"   |  Bin [31m0[m -> [32m14244[m bytes
+ .../ckpt/baseline/checkpoint-3752/scheduler.pt"    |  Bin [31m0[m -> [32m1064[m bytes
+ .../baseline/checkpoint-3752/trainer_state.json"   | 2755 [32m++++++++++++++++[m
+ .../baseline/checkpoint-3752/training_args.bin"    |  Bin [31m0[m -> [32m5304[m bytes
+ .../baseline/checkpoint-4221/model.safetensors"    |  Bin [31m0[m -> [32m126440[m bytes
+ .../ckpt/baseline/checkpoint-4221/optimizer.pt"    |  Bin [31m0[m -> [32m256530[m bytes
+ .../ckpt/baseline/checkpoint-4221/rng_state.pth"   |  Bin [31m0[m -> [32m14244[m bytes
+ .../ckpt/baseline/checkpoint-4221/scheduler.pt"    |  Bin [31m0[m -> [32m1064[m bytes
+ .../baseline/checkpoint-4221/trainer_state.json"   | 3096 [32m++++++++++++++++++[m
+ .../baseline/checkpoint-4221/training_args.bin"    |  Bin [31m0[m -> [32m5304[m bytes
+ .../baseline/checkpoint-4680/model.safetensors"    |  Bin [31m0[m -> [32m126440[m bytes
+ .../ckpt/baseline/checkpoint-4680/optimizer.pt"    |  Bin [31m0[m -> [32m256530[m bytes
+ .../ckpt/baseline/checkpoint-4680/rng_state.pth"   |  Bin [31m0[m -> [32m14244[m bytes
+ .../ckpt/baseline/checkpoint-4680/scheduler.pt"    |  Bin [31m0[m -> [32m1064[m bytes
+ .../baseline/checkpoint-4680/trainer_state.json"   | 3430 [32m++++++++++++++++++++[m
+ .../baseline/checkpoint-4680/training_args.bin"    |  Bin [31m0[m -> [32m5304[m bytes
+ .../baseline/checkpoint-469/model.safetensors"     |  Bin [31m0[m -> [32m126440[m bytes
+ .../ckpt/baseline/checkpoint-469/optimizer.pt"     |  Bin [31m0[m -> [32m256530[m bytes
+ .../ckpt/baseline/checkpoint-469/rng_state.pth"    |  Bin [31m0[m -> [32m14244[m bytes
+ .../ckpt/baseline/checkpoint-469/scheduler.pt"     |  Bin [31m0[m -> [32m1064[m bytes
+ .../baseline/checkpoint-469/trainer_state.json"    |  368 [32m+++[m
+ .../baseline/checkpoint-469/training_args.bin"     |  Bin [31m0[m -> [32m5304[m bytes
+ .../baseline/checkpoint-938/model.safetensors"     |  Bin [31m0[m -> [32m126440[m bytes
+ .../ckpt/baseline/checkpoint-938/optimizer.pt"     |  Bin [31m0[m -> [32m256530[m bytes
+ .../ckpt/baseline/checkpoint-938/rng_state.pth"    |  Bin [31m0[m -> [32m14244[m bytes
+ .../ckpt/baseline/checkpoint-938/scheduler.pt"     |  Bin [31m0[m -> [32m1064[m bytes
+ .../baseline/checkpoint-938/trainer_state.json"    |  709 [32m++++[m
+ .../baseline/checkpoint-938/training_args.bin"     |  Bin [31m0[m -> [32m5304[m bytes
+ .../data/MNIST/raw/t10k-images-idx3-ubyte"         |  Bin [31m0[m -> [32m7840016[m bytes
+ .../data/MNIST/raw/t10k-labels-idx1-ubyte"         |  Bin [31m0[m -> [32m10008[m bytes
+ .../data/MNIST/raw/train-images-idx3-ubyte"        |  Bin [31m0[m -> [32m47040016[m bytes
+ .../data/MNIST/raw/train-labels-idx1-ubyte"        |  Bin [31m0[m -> [32m60008[m bytes
+ .../snake3d/README.md"                             |   61 [32m+[m
+ .../snake3d/requirements.txt"                      |    4 [32m+[m
+ .../snake3d/src/assets/__init__.py"                |    1 [32m+[m
+ .../snake3d/src/assets/models.py"                  |   18 [32m+[m
+ .../snake3d/src/assets/sounds.py"                  |   28 [32m+[m
+ .../snake3d/src/assets/textures.py"                |    4 [32m+[m
+ .../snake3d/src/engine/__init__.py"                |    1 [32m+[m
+ .../snake3d/src/engine/input_handler.py"           |   13 [32m+[m
+ .../snake3d/src/engine/physics.py"                 |   15 [32m+[m
+ .../snake3d/src/engine/renderer.py"                |   12 [32m+[m
+ .../snake3d/src/game/__init__.py"                  |    1 [32m+[m
+ .../snake3d/src/game/food.py"                      |   14 [32m+[m
+ .../snake3d/src/game/obstacle.py"                  |    9 [32m+[m
+ .../snake3d/src/game/snake.py"                     |   31 [32m+[m
+ .../snake3d/src/game/world.py"                     |   23 [32m+[m
+ .../snake3d/src/main.py"                           |   35 [32m+[m
+ .../snake3d/src/utils/__init__.py"                 |    1 [32m+[m
+ .../snake3d/src/utils/config.py"                   |   11 [32m+[m
+ .../snake3d/src/utils/helpers.py"                  |   12 [32m+[m
+ .../snake3d/tests/__init__.py"                     |    1 [32m+[m
+ .../snake3d/tests/test_physics.py"                 |   27 [32m+[m
+ .../snake3d/tests/test_snake.py"                   |   37 [32m+[m
+ .../tensorboard.ipynb"                             |  107 [32m+[m
+ README.md                                          |   18 [32m+[m
+ cleanup.ps1                                        |  103 [32m+[m
+ test1.txt                                          |    3 [31m-[m
+ .../3D_snake_game.py"                              |    0
+ .../df.ipynb"                                      |   98 [32m+[m
+ .../df.py"                                         |    0
+ .../snake_game.py"                                 |    0
+ .../tetris.py"                                     |    0
+ ...72\240\352\270\260 \352\262\214\354\236\204.py" |    0
+ .../\355\225\200\353\263\274.py"                   |  120 [32m+[m
+ .../0.Syllabus(AAI).pdf"                           |  Bin [31m0[m -> [32m161187[m bytes
+ .../1.Intoduction.pdf"                

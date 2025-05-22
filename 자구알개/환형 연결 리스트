@@ -1,0 +1,149 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+    def get_data(self):
+        return self.data
+
+    def get_next(self):
+        return self.next
+
+    def set_next(self, next_node):
+        self.next = next_node
+
+class CList:
+    def __init__(self):
+        self.head = None
+
+    def is_empty(self):
+        return self.head is None
+
+    def add(self, item):
+        new_node = Node(item)
+        if self.is_empty():
+            new_node.set_next(new_node)
+            self.head = new_node
+        else:
+            new_node.set_next(self.head.get_next())
+            self.head.set_next(new_node)
+
+    def append(self, item):
+        new_node = Node(item)
+        if self.is_empty():
+            new_node.set_next(new_node)
+            self.head = new_node
+        else:
+            new_node.set_next(self.head.get_next())
+            self.head.set_next(new_node)
+            self.head = new_node
+
+    def pop_first(self):
+        if self.is_empty():
+            print("List is empty")
+            return None
+        first = self.head.get_next()
+        if self.head == first:
+            self.head = None
+        else:
+            self.head.set_next(first.get_next())
+        return first.get_data()
+
+    def pop_last(self):
+        if self.is_empty():
+            print("List is empty")
+            return None
+        first = self.head.get_next()
+        if self.head == first:
+            data = self.head.get_data()
+            self.head = None
+            return data
+        current = first
+        while current.get_next() != self.head:
+            current = current.get_next()
+        data = self.head.get_data()
+        current.set_next(self.head.get_next())
+        self.head = current
+        return data
+
+    def remove(self, item):
+        if self.is_empty():
+            print("List is empty")
+            return False
+        current = self.head.get_next()
+        prev = self.head
+        found = False
+        while True:
+            if current.get_data() == item:
+                found = True
+                break
+            prev = current
+            current = current.get_next()
+            if current == self.head.get_next():
+                break
+        if not found:
+            print("Item not found")
+            return False
+        if current == prev:
+            self.head = None
+        else:
+            prev.set_next(current.get_next())
+            if current == self.head:
+                self.head = prev
+        return True
+
+    def search(self, item):
+        if self.is_empty():
+            return None
+        current = self.head.get_next()
+        while True:
+            if current.get_data() == item:
+                return current
+            current = current.get_next()
+            if current == self.head.get_next():
+                break
+        return None
+
+    def __iter__(self):
+        if self.is_empty():
+            return
+        current = self.head.get_next()
+        while True:
+            yield current.get_data()
+            if current == self.head:
+                break
+            current = current.get_next()
+
+    def __str__(self):
+        if self.is_empty():
+            return "[]"
+        return "[" + " -> ".join(str(data) for data in self) + "]"
+
+    def length(self):
+        count = 0
+        if self.is_empty():
+            return count
+        for _ in self:
+            count += 1
+        return count
+
+if __name__ == "__main__":
+    clist = CList()
+    clist.append(1)
+    clist.append(2)
+    clist.add(0)
+    
+    print("현재 리스트:", clist)
+    print("리스트 길이:", clist.length())
+    
+    result = clist.search(2)
+    print("2를 검색:", "Found" if result else "Not Found")
+    
+    print("첫 번째 노드 삭제, 값:", clist.pop_first())
+    print("pop_first 후 리스트:", clist)
+    
+    print("마지막 노드 삭제, 값:", clist.pop_last())
+    print("pop_last 후 리스트:", clist)
+    
+    clist.remove(0)
+    print("값 0 제거 후 리스트:", clist)

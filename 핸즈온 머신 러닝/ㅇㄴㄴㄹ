@@ -1,0 +1,72 @@
+# 🐍 22‑2 프로젝트 스크립트 – 핵심 메서드 한‑눈‑정리  
+> VS Code README용 Markdown 버전  
+
+## 1. NumPy  
+| 메서드 | 요약 | 예시 |
+| ------ | ---- | ---- |
+| `reshape(r, c)` | 1‑D → 2‑D 재배열 | `ex = expenses.reshape(4, 7)` |
+| `flatten()` | 다차원 → 1‑D 평탄화 | `np.array(out.values).flatten()` |
+| `argmin()/argmax()` | 최솟값·최댓값 인덱스 | `idx = np.argmin(complex)` |
+
+---
+
+## 2. Pandas – 입출력 & 기초 구조  
+| 패턴 | 설명 | 예시 |
+| ---- | ---- | ---- |
+| `pd.read_csv(path, encoding='utf‑8‑sig')` | BOM 포함 CSV 안심 로드 | `df = pd.read_csv(..., 'utf‑8‑sig')` |
+| `DataFrame(data, columns=[…])` | 컬럼 순서 강제 | `pd.DataFrame(ex, columns=요일)` |
+| `drop(columns=[…])` | 열 삭제 | `df = df.drop(columns=['일시','입금','잔고'])` |
+
+---
+
+## 3. 필터링 & 인덱싱  
+| 패턴 | 설명 | 예시 |
+| ---- | ---- | ---- |
+| `mask = (cond1) & (cond2)` | 조건 AND (`&`), OR(`|`), NOT(`~`) | `mask=(df['카테고리']==cat)&(df['출금']!=0)` |
+| `loc[mask, cols]` | 라벨 기반 슬라이싱 | `df.loc[mask,'출금']` |
+| `iloc[row, col]` | 위치 기반 슬라이싱 | `df.iloc[:, 2*i-1]` |
+
+---
+
+## 4. 집계 & 정렬  
+| 메서드 | 쓰임새 | 예시 |
+| ------ | ------ | ---- |
+| `groupby(keys).sum()` | 그룹 합계 | `gb = df.groupby('카테고리').sum()` |
+| `value_counts()` | 한 열 빈도 | `counts = df_inst['상호명'].value_counts()` |
+| `sort_values(by, ascending)` | 값 기준 정렬 | `out = ggb.sort_values(by='출금', ascending=False)` |
+| `idxmax()/idxmin()` | 그룹별 최대·최소 행 인덱스 | `top = agg.loc[agg.groupby('quarter')['결제금액'].idxmax()]` |
+
+---
+
+## 5. 문자열 & 날짜 처리  
+| 패턴 | 설명 | 예시 |
+| ---- | ---- | ---- |
+| `str.rstrip('문자')` | 오른쪽 문자 제거 | `df['month']=df['결제월'].str.rstrip('월')` |
+| `astype(int)` | 형 변환 | `df['month']=df['month'].astype(int)` |
+| `((month-1)//3)+1` | 월 → 분기 매핑 | `df['quarter']=((df['month']-1)//3)+1` |
+
+---
+
+## 6. 컬렉션 & 유틸  
+| 툴 | 기능 | 예시 |
+| --- | ---- | ---- |
+| `defaultdict(int)` | 자동 0 초기화 카운터 | `drink_count=defaultdict(int)` |
+| `zip(a,b,c)` | 여러 리스트 동시 순회 | `for i,j,k in zip(s0,s1,s2): …` |
+| `warnings.filterwarnings('ignore')` | 경고 숨기기 | `warnings.filterwarnings('ignore')` |
+
+---
+
+### ✨ Quick Ref Snippet (붙여‑넣기용)  
+
+```python
+# 불리언 마스크
+mask = (df['카테고리'] == category) & (df['출금'] != 0)
+out  = df.loc[mask, '출금'].sort_values(ascending=False)
+
+# 분기 계산
+df['month']   = df['결제월'].str.rstrip('월').astype(int)
+df['quarter'] = ((df['month'] - 1) // 3) + 1
+
+# 그룹별 최대 값만 추출
+agg = df.groupby(['quarter','업종'], as_index=False)['결제금액'].sum()
+top = agg.loc[agg.groupby('quarter')['결제금액'].idxmax()]

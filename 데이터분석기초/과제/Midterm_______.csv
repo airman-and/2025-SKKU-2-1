@@ -1,0 +1,11 @@
+Date,Item,Category,Quantity,UnitPrice,TotalPrice
+2025-03-01,Laptop,Electronics,1,1000,1000
+2025-03-01,Mouse,Accessories,2,25,50
+2025-03-02,Keyboard,Accessories,1,45,45
+2025-03-02,Monitor,Electronics,1,200,200
+2025-03-03,Laptop,Electronics,2,1000,2000
+2025-03-03,Mouse,Accessories,3,25,75
+2025-03-04,Keyboard,Accessories,2,45,90
+2025-03-04,Monitor,Electronics,1,200,200
+2025-03-05,Laptop,Electronics,1,1000,1000
+2025-03-05,Mouse,Accessories,2,25,50
